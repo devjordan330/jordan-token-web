@@ -1,16 +1,17 @@
-// Hero + Features pageimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState("");
 
   const connectWallet = async () => {
-    if (typeof window.ethereum !== 'undefined') {
+    if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
       try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
         setWalletAddress(accounts[0]);
-      } catch (error) {
-        console.error("User denied account access");
+        console.log("Connected:", accounts[0]);
+      } catch (err) {
+        console.error(err.message);
       }
     } else {
       alert("Please install MetaMask!");
@@ -18,78 +19,94 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
       <Head>
-        <title>MetaWorld | The Future of Stablecoins</title>
+        <title>MetaWorld | USDX Token</title>
+        <meta name="description" content="The New Standard of Digital Currency" />
       </Head>
 
-      {/* Navigation */}
-      <nav className="p-6 flex justify-between items-center border-b border-gray-800 bg-black sticky top-0 z-50">
-        <h1 className="text-3xl font-extrabold tracking-tighter text-blue-500">METAWORLD</h1>
+      {/* Navbar */}
+      <nav className="flex justify-between items-center px-8 py-6 sticky top-0 bg-black/80 backdrop-blur-md z-50">
+        <div className="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          METAWORLD
+        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+          <a href="#" className="hover:text-white transition-colors">Ecosystem</a>
+          <a href="#" className="hover:text-white transition-colors">Governance</a>
+          <a href="#" className="hover:text-white transition-colors">Whitepaper</a>
+        </div>
         <button 
           onClick={connectWallet}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition-all shadow-lg shadow-blue-500/20"
+          className="px-6 py-2 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition-all active:scale-95"
         >
-          {walletAddress ? `${walletAddress.substring(0,6)}...${walletAddress.substring(38)}` : "Connect Wallet"}
+          {walletAddress ? `${walletAddress.substring(0, 6)}...${walletAddress.substring(38)}` : "Connect Wallet"}
         </button>
       </nav>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-6 py-24 text-center">
-        <h2 className="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600">
-          The New Standard.
-        </h2>
-        <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Welcome to MetaWorld. We are building a secure, transparent, and high-liquidity ecosystem for the USDX token on BEP20.
-        </p>
-        
-        <div className="flex flex-col md:flex-row justify-center gap-6">
-          <button className="bg-white text-black px-10 py-4 rounded-xl font-black text-lg hover:scale-105 transition-transform">
-            BUY USDX
-          </button>
-          <button className="border-2 border-blue-500 text-blue-500 px-10 py-4 rounded-xl font-black text-lg hover:bg-blue-500 hover:text-white transition-all">
-            WHITEPAPER
-          </button>
+      <main className="max-w-7xl mx-auto px-8 pt-20 pb-32">
+        <div className="text-center space-y-8">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
+            THE NEW <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500">
+              STANDARD.
+            </span>
+          </h1>
+          <p className="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed">
+            MetaWorld is building the infrastructure for the future of finance. 
+            Secure, scalable, and entirely decentralized.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center pt-8">
+            <button className="px-10 py-4 bg-purple-600 rounded-xl font-bold hover:bg-purple-700 transition-all hover:shadow-[0_0_40px_rgba(147,51,234,0.3)]">
+              BUY USDX
+            </button>
+            <button className="px-10 py-4 border border-gray-800 rounded-xl font-bold hover:bg-gray-900 transition-all">
+              View Chart
+            </button>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32 border-y border-gray-900 py-16">
+          <div className="text-center">
+            <div className="text-4xl font-bold mb-2">1B+</div>
+            <div className="text-gray-500 uppercase tracking-widest text-xs">Total Supply</div>
+          </div>
+          <div className="text-center border-x border-gray-900">
+            <div className="text-4xl font-bold mb-2">0%</div>
+            <div className="text-gray-500 uppercase tracking-widest text-xs">Buy/Sell Tax</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold mb-2">BEP-20</div>
+            <div className="text-gray-500 uppercase tracking-widest text-xs">Network</div>
+          </div>
+        </div>
+
+        {/* Team Section */}
+        <div className="mt-32">
+          <h2 className="text-3xl font-bold mb-12 text-center italic">Core Foundation</h2>
+          <div className="flex flex-wrap justify-center gap-12">
+            <div className="text-center group">
+              <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-500 rounded-3xl mb-4 mx-auto flex items-center justify-center text-3xl font-bold group-hover:rotate-6 transition-transform">
+                J
+              </div>
+              <div className="font-bold text-xl">Jordan</div>
+              <div className="text-purple-500 text-sm">Lead Architect</div>
+            </div>
+            <div className="text-center group">
+              <div className="w-32 h-32 bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl mb-4 mx-auto flex items-center justify-center text-3xl font-bold group-hover:-rotate-6 transition-transform">
+                R
+              </div>
+              <div className="font-bold text-xl">Raj Purohit</div>
+              <div className="text-pink-500 text-sm">Operations</div>
+            </div>
+          </div>
         </div>
       </main>
 
-      {/* Stats/Tokenomics Preview */}
-      <section className="py-20 bg-gray-900/50">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6">
-          <div className="p-8 rounded-2xl bg-gray-800 border border-gray-700 text-center">
-            <h3 className="text-4xl font-bold text-blue-400 mb-2">1 Billion</h3>
-            <p className="text-gray-400 uppercase tracking-widest text-sm">Total Supply</p>
-          </div>
-          <div className="p-8 rounded-2xl bg-gray-800 border border-gray-700 text-center">
-            <h3 className="text-4xl font-bold text-purple-400 mb-2">0%</h3>
-            <p className="text-gray-400 uppercase tracking-widest text-sm">Transaction Tax</p>
-          </div>
-          <div className="p-8 rounded-2xl bg-gray-800 border border-gray-700 text-center">
-            <h3 className="text-4xl font-bold text-blue-400 mb-2">BEP-20</h3>
-            <p className="text-gray-400 uppercase tracking-widest text-sm">Network</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 text-center">
-        <h3 className="text-4xl font-bold mb-16">Core Leadership</h3>
-        <div className="flex flex-wrap justify-center gap-16">
-          <div className="group">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform mx-auto mb-6 flex items-center justify-center text-4xl font-bold shadow-2xl">J</div>
-            <p className="text-2xl font-bold">Jordan</p>
-            <p className="text-blue-400">CEO & Founder</p>
-          </div>
-          <div className="group">
-            <div className="w-32 h-32 bg-gradient-to-br from-purple-600 to-blue-500 rounded-2xl -rotate-3 group-hover:rotate-0 transition-transform mx-auto mb-6 flex items-center justify-center text-4xl font-bold shadow-2xl">R</div>
-            <p className="text-2xl font-bold">Raj Purohit</p>
-            <p className="text-purple-400">CTO</p>
-          </div>
-        </div>
-      </section>
-
-      <footer className="p-12 border-t border-gray-900 text-center">
-        <p className="text-gray-600 font-medium">© 2026 MetaWorld Ecosystem. All Rights Reserved.</p>
+      {/* Footer */}
+      <footer className="border-t border-gray-900 py-12 px-8 text-center text-gray-600 text-sm">
+        © 2026 MetaWorld Protocol. All rights reserved.
       </footer>
     </div>
   );
