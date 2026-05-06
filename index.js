@@ -22,9 +22,7 @@ createWeb3Modal({
   enableAnalytics: true, // Optional
   allWallets: 'SHOW',    // Ye line Trust Wallet aur baaki options dikhayegi
 });
-function App() {
-  const [walletAddress, setWalletAddress] = useState("");
-
+const [walletAddress, setWalletAddress] = useState("");
   const connectWallet = async () => {
     if (window.ethereum) {
       try {
@@ -32,6 +30,11 @@ function App() {
         setWalletAddress(accounts[0]);
       } catch (err) {
         console.error(err.message);
+      }
+    } else {
+      alert("Please install MetaMask!");
+    }
+  };
       }
     } else {
       alert("Please install MetaMask!");
