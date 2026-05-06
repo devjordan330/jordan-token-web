@@ -1,66 +1,165 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [walletAddress, setWalletAddress] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const connectWallet = async () => {
+    if (typeof window !== "undefined" && window.ethereum) {
+      try {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        setWalletAddress(accounts[0]);
+        setIsModalOpen(false);
+      } catch (err) { console.error("Denied"); }
+    } else { alert("Please use Trust Wallet or MetaMask!"); }
+  };
+
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-blue-500/30">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/10">
-        <h1 className="text-2xl font-bold tracking-tighter bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-          METAWORLD
-        </h1>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-          <a href="#" className="hover:text-white transition">Ecosystem</a>
-          <a href="#" className="hover:text-white transition">Governance</a>
-          <a href="#" className="hover:text-white transition">Whitepaper</a>
-        </div>
-        <button className="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-mono hover:bg-white/10 transition">
-          0x6222...bd2a
-        </button>
-      </nav>
+    <div className="min-h-screen text-white font-sans selection:bg-orange-500/30 overflow-x-hidden relative">
+      
+      {/* --- BACKGROUND --- */}
+      <div className="fixed inset-0 z-0 bg-[#050505]" style={{
+        background: `radial-gradient(circle at top, #3d1b00 0%, #050505 65%)`
+      }}></div>
+      <div className="fixed inset-0 z-0 opacity-[0.08] pointer-events-none" 
+           style={{ backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`, backgroundSize: '45px 45px' }}>
+      </div>
 
-      {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-6 pt-24 pb-12 text-center">
-        <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400 text-xs font-bold tracking-widest uppercase">
-          Next Gen DeFi
-        </div>
-        <h2 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
-          THE FUTURE <br /> <span className="text-blue-500">IS HERE.</span>
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-10 leading-relaxed">
-          MetaWorld is building the next generation of decentralized finance. 
-          Fast, secure, and limitless protocol for the global economy.
-        </p>
+      <style jsx>{`
+        @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .animate-infinite-scroll { display: flex; width: max-content; animation: infinite-scroll 35s linear infinite; }
+      `}</style>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center mb-20">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-            BUY USDX
+      <div className="relative z-10">
+        {/* Navbar */}
+        <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
+          <h1 className="text-2xl font-black tracking-tighter uppercase">METAWORLD</h1>
+          <div className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <a href="#" className="hover:text-white transition">Ecosystem</a>
+            <a href="#" className="hover:text-white transition">Governance</a>
+            <a href="#" className="hover:text-white transition">Whitepaper</a>
+          </div>
+          <button onClick={() => setIsModalOpen(true)} className="bg-[#ff5c00] hover:bg-[#e65200] text-white px-8 py-3 rounded-full text-xs font-black transition-all shadow-lg uppercase">
+            {walletAddress ? `${walletAddress.slice(0,6)}...${walletAddress.slice(-4)}` : "CONNECT WALLET"}
           </button>
-          <button className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold transition">
-            View Chart
-          </button>
-        </div>
+        </nav>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-white/5 py-12">
-          <div>
-            <div className="text-4xl font-bold mb-1">1B+</div>
-            <div className="text-gray-500 text-sm uppercase tracking-widest">Total Supply</div>
+        {/* --- WALLET MODAL --- */}
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl p-4">
+            <div className="bg-[#12141d] border border-white/10 p-8 rounded-[35px] max-w-sm w-full relative shadow-2xl">
+              <button onClick={() => setIsModalOpen(false)} className="absolute top-6 right-6 text-gray-500 hover:text-white bg-white/5 w-9 h-9 rounded-full flex items-center justify-center">×</button>
+              <h3 className="text-xl font-bold mb-8 text-center uppercase tracking-tight text-white">Select your wallet</h3>
+              <div className="flex flex-col border border-white/10 rounded-3xl overflow-hidden bg-white/[0.02]">
+                <button onClick={connectWallet} className="flex items-center gap-4 p-5 hover:bg-white/5 transition border-b border-white/10 group text-left">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" className="h-7 w-7" alt="" />
+                  <span className="font-bold text-xs uppercase tracking-widest text-white">MetaMask</span>
+                </button>
+                <button onClick={connectWallet} className="flex items-center gap-4 p-5 hover:bg-white/5 transition border-b border-white/10 group text-left">
+                  <img src="https://trustwallet.com/assets/images/media/assets/trust_platform.svg" className="h-7 w-7" alt="" />
+                  <span className="font-bold text-xs uppercase tracking-widest text-white">Trust Wallet</span>
+                </button>
+                <button className="p-5 text-[10px] font-black uppercase text-gray-500 hover:text-[#ff5c00] transition tracking-[0.2em] bg-black/20 text-center">More Wallet Options</button>
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="text-4xl font-bold mb-1">0%</div>
-            <div className="text-gray-500 text-sm uppercase tracking-widest">Buy/Sell Tax</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold mb-1 text-blue-400">BEP-20</div>
-            <div className="text-gray-500 text-sm uppercase tracking-widest">Network</div>
-          </div>
-        </div>
-      </main>
+        )}
 
-      <footer className="text-center py-10 text-gray-600 text-sm">
-        © 2026 MetaWorld Protocol. Built for the future.
-      </footer>
+        <main className="max-w-7xl mx-auto px-6 pt-20">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-[110px] font-black mb-10 tracking-tighter uppercase leading-[0.82]">
+              Your gateway to the <br /> <span className="text-[#ff5c00]">digital economy</span>
+            </h2>
+            <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest">Join the Pack</button>
+          </div>
+
+          {/* --- UPDATED: SIDE-BY-SIDE SECTIONS (DEX + SOCIALS) --- */}
+          <div className="flex flex-col md:flex-row gap-6 mb-24 max-w-6xl mx-auto">
+            
+            {/* Market / DEX Panel */}
+            <div className="flex-1 bg-white/[0.03] border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative group">
+               <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">Live Markets</span>
+               </div>
+               <div className="grid grid-cols-2 gap-4 mt-2">
+                 {[
+                   { name: 'DexScreener', url: 'https://dexscreener.com' },
+                   { name: 'DEXTools', url: 'https://www.dextools.io' },
+                   { name: 'Birdeye', url: 'https://birdeye.so' },
+                   { name: 'Jupiter', url: 'https://jup.ag' }
+                 ].map((item) => (
+                   <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" 
+                      className="px-4 py-4 bg-white/5 border border-white/5 rounded-2xl text-[10px] font-black uppercase text-center tracking-widest hover:bg-[#ff5c00]/20 hover:border-[#ff5c00]/50 transition-all">
+                     {item.name}
+                   </a>
+                 ))}
+               </div>
+            </div>
+
+            {/* Social / Community Panel */}
+            <div className="flex-1 bg-[#ff5c00]/5 border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative">
+               <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">Community</span>
+               </div>
+               <div className="flex flex-col gap-3 mt-2">
+                 {[
+                   { name: 'Twitter / X', url: 'https://twitter.com' },
+                   { name: 'Telegram', url: 'https://t.me' },
+                   { name: 'Discord', url: 'https://discord.com' }
+                 ].map((social) => (
+                   <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" 
+                      className="w-full py-4 bg-black/40 border border-white/10 rounded-2xl text-center text-xs font-black uppercase tracking-[0.3em] hover:bg-[#ff5c00] hover:text-white transition-all">
+                     {social.name}
+                   </a>
+                 ))}
+               </div>
+            </div>
+
+          </div>
+
+          {/* Infinite Logo Slider */}
+          <div className="w-full overflow-hidden py-16 border-y border-white/5 relative bg-black/40 mb-20">
+            <div className="animate-infinite-scroll flex gap-24 items-center">
+               {['Binance', 'Coinbase', 'Kraken', 'DEXTools', 'DexScreener', 'PancakeSwap', 'CoinGecko', 'Solana', 'Jupiter'].map((name, i) => (
+                 <span key={i} className="text-3xl font-black text-white/10 uppercase tracking-tighter hover:text-[#ff5c00] transition cursor-default">{name}</span>
+               ))}
+               {['Binance', 'Coinbase', 'Kraken', 'DEXTools', 'DexScreener', 'PancakeSwap', 'CoinGecko', 'Solana', 'Jupiter'].map((name, i) => (
+                 <span key={i + 10} className="text-3xl font-black text-white/10 uppercase tracking-tighter hover:text-[#ff5c00] transition cursor-default">{name}</span>
+               ))}
+            </div>
+          </div>
+
+          {/* Asset Section */}
+          <div className="py-20 text-center flex flex-col items-center">
+            <h3 className="text-4xl md:text-8xl font-black uppercase mb-10 tracking-tighter leading-none">One asset. <br className="md:hidden"/> Endless possibilities.</h3>
+            <div className="inline-block border border-[#ff5c00]/60 rounded-full px-8 py-2 mb-24 text-[#ff5c00] font-black tracking-[0.4em] uppercase text-[11px]">
+              USDX is for everyone
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-5 w-full">
+              {[
+                { t: "Decentralized Finance", d: "Trade, earn, and unlock yield opportunities with USDX." },
+                { t: "Global Sports", d: "USDX partners with sports organizations for fan experiences." },
+                { t: "Art & Culture", d: "Supporting artists and creators through community initiatives." },
+                { t: "Giving Back", d: "USDX raised funds for causes the community believes in." },
+                { t: "Consumer Applications", d: "Products built for everyday use, from onboarding to social." }
+              ].map((card, i) => (
+                <div key={i} className="bg-white/[0.04] p-10 rounded-[40px] text-left border border-white/5 hover:border-[#ff5c00]/40 transition-all flex flex-col justify-between group backdrop-blur-xl">
+                  <div><h4 className="font-black uppercase text-xl mb-5 leading-tight">{card.t}</h4><p className="text-gray-500 text-sm leading-relaxed">{card.d}</p></div>
+                  <div className="mt-10 bg-[#ff5c00] w-12 h-12 rounded-full flex items-center justify-center group-hover:translate-x-3 transition cursor-pointer shadow-lg text-black font-black text-xl">➜</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
+
+        <footer className="bg-black/60 pt-32 pb-16 border-t border-white/5 text-center">
+          <h1 className="text-3xl font-black uppercase tracking-tighter mb-4">USDX</h1>
+          <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">© 2026 USDX. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
   );
 }
-
