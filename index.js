@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
+import { WagmiConfig } from 'wagmi';
+import { mainnet, bsc } from 'wagmi/chains';
+const projectId = 'f523ce22bed6a9a2acc600cadd1473c5';
 
+const metadata = {
+  name: 'METAWORLD',
+  description: 'The Future is Here',
+  url: 'https://metaworld-official.vercel.app',
+  icons: ['https://avatars.githubusercontent.com/u/37784886']
+};
+
+const chains = [mainnet, bsc];
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
+
+createWeb3Modal({ wagmiConfig, projectId, chains });
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
 
@@ -18,15 +33,11 @@ function App() {
   };
 
   return (
+    <WagmiConfig config={wagmiConfig}>
     <div style={{ backgroundColor: '#050505', minHeight: '100vh', color: 'white', fontFamily: 'sans-serif' }}>
       <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '20px 40px', borderBottom: '1px solid #222' }}>
         <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#a855f7' }}>METAWORLD</div>
-        <button 
-          onClick={connectWallet} 
-          style={{ padding: '10px 20px', borderRadius: '20px', cursor: 'pointer', backgroundColor: 'white', color: 'black', border: 'none', fontWeight: 'bold' }}
-        >
-          {walletAddress ? `${walletAddress.substring(0, 6)}...` : "Connect Wallet"}
-        </button>
+      <w3m-button />
       </nav>
       <main style={{ textAlign: 'center', marginTop: '100px' }}>
         <h1 style={{ fontSize: '72px', fontWeight: '900', letterSpacing: '-2px' }}>THE FUTURE <br/> IS HERE.</h1>
@@ -35,6 +46,7 @@ function App() {
           BUY USDX
         </button>
       </main>
+      </WagmiConfig>
     </div>
   );
 }
