@@ -13,7 +13,7 @@ const metadata = {
 };
 
 const chains = [mainnet, bsc];
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata, enableWalletConnect: true, enableInjected: true, enableEIP6963: true });
 
 createWeb3Modal({ wagmiConfig, projectId, chains });
 function App() {
@@ -46,9 +46,9 @@ function App() {
           BUY USDX
         </button>
     </main>
-      </div>
-    </WagmiConfig>
-  );
+    </div>
+  </WagmiConfig>
+);
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
