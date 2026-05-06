@@ -15,7 +15,13 @@ const metadata = {
 const chains = [mainnet, bsc];
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata, enableWalletConnect: true, enableInjected: true, enableEIP6963: true });
 
-createWeb3Modal({ wagmiConfig, projectId, chains });
+createWeb3Modal({ 
+  wagmiConfig, 
+  projectId, 
+  chains,
+  enableAnalytics: true, // Optional
+  allWallets: 'SHOW',    // Ye line Trust Wallet aur baaki options dikhayegi
+});
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
 
