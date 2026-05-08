@@ -21,10 +21,10 @@ const bsc = {
 };
 
 const metadata = {
-  name: 'Metaworld',
-  description: 'Metaworld Token Gateway',
-  url: 'https://jordan-token-web.vercel.app',
-  icons: ['https://avatars.githubusercontent.com/u/168449767?s=200&v=4']
+  name: 'USD Exchange | USDX',
+  description: 'USD Exchange (USDX) - The Premier Digital Asset for the Metaworld Ecosystem',
+  url: 'https://metaworld-official.vercel.app',
+  icons: ['https://avatars.githubusercontent.com/u/168449767?s=200&v=4'] 
 };
 
 createWeb3Modal({
