@@ -100,13 +100,14 @@ export default function Home() {
                 </button>
               </div>
               <p className="text-center mt-3 text-[9px] text-gray-500 font-medium uppercase tracking-[0.3em]">
-             <div className="text-center mb-16">
+      <div className="text-center mb-16">
             <h2 className="text-5xl md:text-[110px] font-black mb-10 tracking-tighter uppercase leading-[0.82]">
               Your gateway to the <br />
               <span className="text-[#ff5c00]">digital economy</span>
             </h2>
 
             <div className="flex flex-col items-center w-full">
+              {/* JOIN THE COMMUNITY BUTTON */}
               <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest mb-16">
                 Join the Community
               </button>
@@ -135,7 +136,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </div>     
               Swap BEP20
             </button>
           </div>
