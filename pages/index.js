@@ -52,7 +52,7 @@ export default function Home() {
 
       <div className="relative z-10">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
-          <h1 className="text-2xl font-black tracking-tighter uppercase">METAWORLD</h1>
+          <h1 className="text-2xl font-black tracking-tighter uppercase">USD EXCHANGE</h1>
           <w3m-button />
         </nav>
 <main className="max-w-7xl mx-auto px-6 pt-20">
