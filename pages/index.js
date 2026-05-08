@@ -52,9 +52,17 @@ export default function Home() {
 
       <div className="relative z-10">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
-        <h1 className="flex flex-col md:flex-row md:items-baseline leading-none tracking-tighter uppercase">
-  <span className="font-[1000] text-4xl md:text-5xl text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">USD</span>
-  <span className="font-medium text-[#ff5c00] text-[10px] md:text-[13px] tracking-[0.5em] md:ml-3 opacity-90 italic">
+       <h1 className="flex flex-col leading-none tracking-tighter uppercase relative group">
+  <div className="relative">
+    {/* USD (Bada aur Bold) */}
+    <span className="font-[1000] text-4xl md:text-5xl text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">USD</span>
+    
+    {/* Halka Glow Effect */}
+    <div className="absolute inset-0 bg-[#ff5c00]/10 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+  </div>
+
+  {/* EXCHANGE (Chota, Wide, aur Spaced) */}
+  <span className="font-medium text-[#ff5c00] text-[10px] md:text-[13px] tracking-[0.5em] mt-1 md:mt-2 opacity-90 italic">
     Exchange
   </span>
 </h1>
