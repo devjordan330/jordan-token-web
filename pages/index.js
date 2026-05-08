@@ -159,29 +159,31 @@ export default function Home() {
 
             </div>
 
-           <div className="h-[320px] flex items-end gap-2 bg-black/50 rounded-2xl p-6 overflow-hidden">
+      <div className="h-[320px] bg-black/50 rounded-2xl p-6 overflow-hidden flex items-end gap-4">
   {[
-    {h:90,c:'bg-green-500'},
-    {h:140,c:'bg-red-500'},
-    {h:120,c:'bg-green-500'},
-    {h:170,c:'bg-green-500'},
-    {h:110,c:'bg-red-500'},
-    {h:220,c:'bg-green-500'},
-    {h:160,c:'bg-red-500'},
-    {h:250,c:'bg-green-500'},
-    {h:180,c:'bg-red-500'},
-    {h:290,c:'bg-green-500'},
-    {h:210,c:'bg-red-500'},
-    {h:320,c:'bg-green-500'}
-  ].map((item,index)=>(
-    <div
-      key={index}
-      className={`flex-1 rounded-t-xl ${item.c}`}
-      style={{height:`${item.h}px`}}
-    />
+    {h:120,color:'bg-green-500'},
+    {h:180,color:'bg-red-500'},
+    {h:140,color:'bg-green-500'},
+    {h:230,color:'bg-green-500'},
+    {h:160,color:'bg-red-500'},
+    {h:260,color:'bg-green-500'},
+    {h:190,color:'bg-red-500'},
+    {h:300,color:'bg-green-500'}
+  ].map((candle,index)=>(
+    <div key={index} className="flex flex-col items-center flex-1">
+      
+      <div className="w-[2px] bg-white/30 h-10"></div>
+
+      <div
+        className={`w-8 rounded-md ${candle.color}`}
+        style={{height:`${candle.h}px`}}
+      ></div>
+
+      <div className="w-[2px] bg-white/30 h-10"></div>
+
+    </div>
   ))}
 </div>
-
             {/* SWAP */}
             <div className="space-y-4">
 
