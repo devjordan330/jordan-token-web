@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { createWeb3Modal, defaultConfig, useWeb3Modal } from '@web3modal/ethers/react';
+# Updated `pages/index.js`
+
+```jsx
+import React from 'react';
+import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react';
 
 // --- CONFIGURATION ---
 const projectId = 'f523ce22bed6a9a2acc600cadd1473c5';
@@ -22,9 +25,9 @@ const bsc = {
 
 const metadata = {
   name: 'USDExchange | USDX',
-  description: 'USDExchange (USDX) - The Premier Digital Asset for the Global Ecosystem',
-  url: 'https://metaworld-official.vercel.app', // Isse bhi future mein domain se replace karein
-  icons: ['YOUR_NEW_LOGO_URL']
+  description: 'USDX - The Utility Token Powering the USDExchange Ecosystem',
+  url: 'https://metaworld-official.vercel.app',
+  icons: ['https://metaworld-official.vercel.app/logo-usdx.png']
 };
 
 createWeb3Modal({
@@ -33,162 +36,490 @@ createWeb3Modal({
   projectId,
   themeVariables: {
     '--w3m-accent': '#ff5c00',
-    '--w3m-border-radius-master': '2px'
+    '--w3m-border-radius-master': '10px'
   }
 });
 
 export default function Home() {
-  const { open } = useWeb3Modal();
-
   return (
-    <div className="min-h-screen text-white font-sans selection:bg-orange-500/30 overflow-x-hidden relative">
-      <div className="fixed inset-0 z-0 bg-[#050505]" style={{ background: `radial-gradient(circle at top, #3d1b00 0%, #050505 65%)` }}></div>
-      <div className="fixed inset-0 z-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`, backgroundSize: '45px 45px' }}></div>
+    <div className="min-h-screen text-white font-sans selection:bg-orange-500/30 overflow-x-hidden relative bg-[#050505]">
+      {/* Background */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          background:
+            'radial-gradient(circle at top, #3d1b00 0%, #050505 65%)'
+        }}
+      ></div>
+
+      <div
+        className="fixed inset-0 z-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
+          backgroundSize: '45px 45px'
+        }}
+      ></div>
 
       <style jsx>{`
-        @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .animate-infinite-scroll { display: flex; width: max-content; animation: infinite-scroll 35s linear infinite; }
+        @keyframes infinite-scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-infinite-scroll {
+          display: flex;
+          width: max-content;
+          animation: infinite-scroll 35s linear infinite;
+        }
       `}</style>
 
       <div className="relative z-10">
+        {/* Navbar */}
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
-     <div className="flex items-center gap-3 group cursor-pointer">
-            {/* Logo Circle - Updated to USDX */}
+          <div className="flex items-center gap-3 cursor-pointer group">
             <div className="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14">
-              <div className="absolute inset-0 border-2 border-[#ff5c00] rounded-full animate-[pulse_3s_infinite] opacity-50"></div>
+              <div className="absolute inset-0 border-2 border-[#ff5c00] rounded-full animate-pulse opacity-50"></div>
+
               <div className="absolute inset-1 bg-gradient-to-br from-[#ff5c00] to-[#b34100] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,92,0,0.4)]">
-                <span className="text-white font-[1000] text-lg md:text-xl tracking-tighter">USDX</span>
+                <span className="text-white font-black text-lg tracking-tight">
+                  USDX
+                </span>
               </div>
             </div>
 
-            {/* Brand Text - Updated to USD EXCHANGE */}
             <div className="flex flex-col leading-none">
-              <span className="font-[1000] text-2xl md:text-3xl text-white tracking-tighter uppercase italic">USD</span>
-              <span className="font-medium text-[#ff5c00] text-[10px] md:text-[11px] tracking-[0.4em] uppercase opacity-90">Exchange</span>
+              <span className="font-black text-2xl md:text-3xl uppercase italic tracking-tight">
+                USD
+              </span>
+
+              <span className="text-[#ff5c00] text-[10px] tracking-[0.35em] uppercase">
+                Exchange
+              </span>
             </div>
           </div>
+
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-gray-300 font-semibold">
+            <a href="#about" className="hover:text-[#ff5c00] transition">
+              About
+            </a>
+
+            <a href="#tokenomics" className="hover:text-[#ff5c00] transition">
+              Tokenomics
+            </a>
+
+            <a href="#roadmap" className="hover:text-[#ff5c00] transition">
+              Roadmap
+            </a>
+          </div>
+
           <w3m-button />
         </nav>
-<main className="max-w-7xl mx-auto px-6 pt-20">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-[110px] font-black mb-10 tracking-tighter uppercase leading-[0.82]">
-            Your gateway to the <br /> <span className="text-[#ff5c00]">digital economy</span>
-          </h2>
-          
-          <div className="flex flex-col items-center w-full">
-            {/* 1. JOIN THE PACK BUTTON */}
-            <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest mb-16">
-              Join the Community
-            </button>
-       {/* CONTRACT ADDRESS SECTION */}
-            <div className="w-full max-w-2xl mx-auto mb-16 px-4">
-              <div className="bg-white/[0.03] border border-white/10 p-1 rounded-2xl flex flex-col md:flex-row items-center gap-4 backdrop-blur-xl group hover:border-[#ff5c00]/30 transition-all">
+
+        {/* Main */}
+        <main className="max-w-7xl mx-auto px-6 pt-20 relative z-10">
+          {/* Hero */}
+          <section className="text-center mb-28">
+            <div className="inline-flex items-center gap-2 border border-[#ff5c00]/30 bg-[#ff5c00]/5 rounded-full px-6 py-2 mb-8 backdrop-blur-xl">
+              <span className="w-2 h-2 rounded-full bg-[#ff5c00] animate-pulse"></span>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black text-[#ff5c00]">
+                Future USDExchange Ecosystem
+              </span>
+            </div>
+
+            <h1 className="text-5xl md:text-[100px] font-black uppercase leading-[0.85] tracking-tighter mb-8">
+              The Utility Token <br />
+              <span className="text-[#ff5c00]">Powering USDExchange</span>
+            </h1>
+
+            <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-lg leading-relaxed mb-12">
+              USDX is building a next-generation crypto ecosystem focused on
+              swaps, decentralized utilities, community growth and the future of
+              digital finance.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16">
+              <button className="bg-[#ff5c00] hover:bg-[#ff7b2f] text-white px-10 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all shadow-[0_0_30px_rgba(255,92,0,0.25)] hover:scale-105">
+                Join Community
+              </button>
+
+              <button className="border border-white/10 bg-white/5 hover:border-[#ff5c00]/50 hover:bg-[#ff5c00]/10 px-10 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all">
+                View Roadmap
+              </button>
+            </div>
+
+            {/* Contract */}
+            <div className="w-full max-w-3xl mx-auto px-4">
+              <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-2 flex flex-col md:flex-row items-center gap-4 backdrop-blur-xl hover:border-[#ff5c00]/30 transition-all">
                 <div className="flex-1 flex items-center gap-3 px-6 py-3 overflow-hidden w-full">
-                  <span className="text-[#ff5c00] text-[10px] font-black uppercase tracking-widest whitespace-nowrap">CA:</span>
+                  <span className="text-[#ff5c00] text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
+                    Contract
+                  </span>
+
                   <code className="text-[10px] md:text-xs font-mono text-gray-400 truncate tracking-wider">
                     0x0000000000000000000000000000000000000000
                   </code>
                 </div>
-                <button 
+
+                <button
                   onClick={() => {
-                    navigator.clipboard.writeText('0x0000000000000000000000000000000000000000');
-                    alert('USDX Address Copied!');
+                    navigator.clipboard.writeText(
+                      '0x0000000000000000000000000000000000000000'
+                    );
+                    alert('USDX Contract Copied');
                   }}
-                  className="w-full md:w-auto bg-[#ff5c00] hover:bg-[#ff8c40] text-white px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(255,92,0,0.2)]"
+                  className="w-full md:w-auto bg-[#ff5c00] hover:bg-[#ff7b2f] text-white px-8 py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em] transition-all"
                 >
                   Copy Address
                 </button>
               </div>
-              <p className="text-center mt-3 text-[9px] text-gray-500 font-medium uppercase tracking-[0.3em]">
-                Click to copy the official <span className="text-[#ff5c00]">USDX</span> contract
-              </p>
-            </div>  
-        {/* 4. TOKENOMICS SECTION */}
-        <div className="w-full max-w-6xl mx-auto px-4 mb-28 relative z-10">
-          <div className="mb-12 flex items-center gap-4">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/40"></div>
-            <div className="border border-[#ff5c00]/30 rounded-full px-8 py-2 text-[#ff5c00] text-[11px] font-black tracking-[0.4em] uppercase bg-[#ff5c00]/5 backdrop-blur-sm">
-              USDX Tokenomics
             </div>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/40"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all group backdrop-blur-xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4 group-hover:text-orange-400 transition-colors">Total Supply</p>
-              <h3 className="text-4xl font-black text-white">1B <span className="text-[#ff5c00]">USDX</span></h3>
-            </div>
-            <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all group backdrop-blur-xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4 group-hover:text-orange-400 transition-colors">Trading Fee</p>
-              <h3 className="text-4xl font-black text-white">0% <span className="text-[#ff5c00]">Tax</span></h3>
-            </div>
-            <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all group backdrop-blur-xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4 group-hover:text-orange-400 transition-colors">Network</p>
-              <h3 className="text-4xl font-black text-white italic tracking-tighter">BEP-20</h3>
-            </div>
-          </div>
-        </div>
-    <div className="flex flex-col md:flex-row gap-8 mb-24 max-w-6xl mx-auto px-4 relative z-10">
-            <div className="flex-1 bg-white/[0.03] border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative">
-               <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
-                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">Live Markets</span>
-               </div>
-               <div className="grid grid-cols-2 gap-4 mt-2">
-                 {[{ name: 'DexScreener', url: 'https://dexscreener.com' }, { name: 'DEXTools', url: 'https://www.dextools.io' }, { name: 'Birdeye', url: 'https://birdeye.so' }, { name: 'Jupiter', url: 'https://jup.ag' }].map((item) => (
-                   <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="px-4 py-4 bg-white/5 border border-white/5 rounded-2xl text-[10px] font-black uppercase text-center tracking-widest hover:bg-[#ff5c00]/20 hover:border-[#ff5c00]/50 transition-all">{item.name}</a>
-                 ))}
-               </div>
-            </div>
-            <div className="flex-1 bg-[#ff5c00]/5 border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative">
-               <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
-                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">Community</span>
-               </div>
-               <div className="flex flex-col gap-3 mt-2">
-                 {[{ name: 'Twitter / X', url: 'https://twitter.com' }, { name: 'Telegram', url: 'https://t.me' }, { name: 'Discord', url: 'https://discord.com' }].map((social) => (
-                   <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-black/40 border border-white/10 rounded-2xl text-center text-xs font-black uppercase tracking-[0.3em] hover:bg-[#ff5c00] hover:text-white transition-all">{social.name}</a>
-                 ))}
-               </div>
-            </div>
-          </div>
-          {/* Roadmap Section */}
-<div className="max-w-6xl mx-auto px-4 mb-24 relative z-10">
-  <div className="flex items-center gap-4 mb-12">
-    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/40"></div>
-    <div className="border border-[#ff5c00]/30 rounded-full px-8 py-2 text-[#ff5c00] text-[11px] font-black tracking-[0.4em] uppercase bg-[#ff5c00]/5 backdrop-blur-sm">
-      USDX Roadmap
-    </div>
-    <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/40"></div>
-  </div>
+          </section>
 
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-    {[
-      { phase: 'Phase 1', title: 'Launch', desc: 'Website & Token Deployment' },
-      { phase: 'Phase 2', title: 'Marketing', desc: 'Community Growth & Ads' },
-      { phase: 'Phase 3', title: 'Listing', desc: 'CMC & CoinGecko' },
-      { phase: 'Phase 4', title: 'Moon', desc: 'Tier 1 CEX Listings' }
-    ].map((item, index) => (
-      <div key={index} className="p-6 bg-white/[0.02] border border-white/10 rounded-[30px] hover:border-[#ff5c00]/40 transition-all">
-        <span className="text-[#ff5c00] text-[10px] font-black tracking-widest uppercase">{item.phase}</span>
-        <h4 className="text-xl font-bold text-white mt-2 mb-2">{item.title}</h4>
-        <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
-      </div>
-    ))}
-  </div>
-</div>
+          {/* About */}
+          <section id="about" className="mb-28">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="border border-[#ff5c00]/30 rounded-full px-6 py-2 text-[#ff5c00] text-[10px] font-black tracking-[0.3em] uppercase inline-block mb-6 bg-[#ff5c00]/5">
+                  About USDExchange
+                </div>
+
+                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight mb-6">
+                  Building the Future of the USDX Ecosystem
+                </h2>
+
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  USDExchange is a long-term ecosystem project focused on
+                  decentralized finance, community-powered growth and future swap
+                  utilities. USDX is designed as the core utility token powering
+                  the platform.
+                </p>
+
+                <p className="text-gray-500 leading-relaxed">
+                  The vision includes future staking, ecosystem rewards,
+                  decentralized tools and an advanced swap platform for the next
+                  generation of users.
+                </p>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 rounded-[40px] p-10 backdrop-blur-xl">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    'Swap Ecosystem',
+                    'Community Driven',
+                    'Future Staking',
+                    'Web3 Utilities'
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="bg-black/40 border border-white/10 rounded-2xl p-6 text-center hover:border-[#ff5c00]/40 transition-all"
+                    >
+                      <span className="text-sm uppercase tracking-widest font-black text-white/80">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Tokenomics */}
+          <section id="tokenomics" className="mb-28">
+            <div className="mb-12 flex items-center gap-4">
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/40"></div>
+
+              <div className="border border-[#ff5c00]/30 rounded-full px-8 py-2 text-[#ff5c00] text-[11px] font-black tracking-[0.4em] uppercase bg-[#ff5c00]/5 backdrop-blur-sm">
+                USDX Tokenomics
+              </div>
+
+              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/40"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all backdrop-blur-xl">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4">
+                  Total Supply
+                </p>
+
+                <h3 className="text-4xl font-black text-white">
+                  1B <span className="text-[#ff5c00]">USDX</span>
+                </h3>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all backdrop-blur-xl">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4">
+                  Network
+                </p>
+
+                <h3 className="text-4xl font-black text-white italic tracking-tighter">
+                  BEP-20
+                </h3>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all backdrop-blur-xl">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4">
+                  Trading Tax
+                </p>
+
+                <h3 className="text-4xl font-black text-white">
+                  0%
+                </h3>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-10 rounded-[35px] text-center hover:border-[#ff5c00]/50 transition-all backdrop-blur-xl">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4">
+                  Utility
+                </p>
+
+                <h3 className="text-3xl font-black text-white">
+                  Ecosystem
+                </h3>
+              </div>
+            </div>
+          </section>
+
+          {/* Utility */}
+          <section className="mb-28">
+            <div className="mb-12 text-center">
+              <div className="border border-[#ff5c00]/30 rounded-full px-8 py-2 text-[#ff5c00] text-[11px] font-black tracking-[0.4em] uppercase bg-[#ff5c00]/5 backdrop-blur-sm inline-block mb-6">
+                USDX Utility
+              </div>
+
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
+                Ecosystem Features
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                {
+                  title: 'Swap',
+                  desc: 'Future decentralized swap ecosystem'
+                },
+                {
+                  title: 'Staking',
+                  desc: 'Reward system for long-term holders'
+                },
+                {
+                  title: 'Governance',
+                  desc: 'Community-powered ecosystem decisions'
+                },
+                {
+                  title: 'Rewards',
+                  desc: 'Future ecosystem utility & benefits'
+                }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 hover:border-[#ff5c00]/40 transition-all backdrop-blur-xl"
+                >
+                  <h3 className="text-2xl font-black mb-4 uppercase tracking-tight text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Roadmap */}
+          <section id="roadmap" className="mb-28">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/40"></div>
+
+              <div className="border border-[#ff5c00]/30 rounded-full px-8 py-2 text-[#ff5c00] text-[11px] font-black tracking-[0.4em] uppercase bg-[#ff5c00]/5 backdrop-blur-sm">
+                USDX Roadmap
+              </div>
+
+              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/40"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                {
+                  phase: 'Phase 1',
+                  title: 'Launch',
+                  desc: 'Website, branding & token deployment'
+                },
+                {
+                  phase: 'Phase 2',
+                  title: 'Community',
+                  desc: 'Community growth & ecosystem awareness'
+                },
+                {
+                  phase: 'Phase 3',
+                  title: 'Development',
+                  desc: 'Future DApp & staking development'
+                },
+                {
+                  phase: 'Phase 4',
+                  title: 'Expansion',
+                  desc: 'USDExchange swap ecosystem expansion'
+                }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 hover:border-[#ff5c00]/40 transition-all backdrop-blur-xl"
+                >
+                  <span className="text-[#ff5c00] text-[10px] font-black tracking-[0.2em] uppercase">
+                    {item.phase}
+                  </span>
+
+                  <h3 className="text-2xl font-black mt-4 mb-3 uppercase tracking-tight">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Community */}
+          <section className="mb-28">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/[0.03] border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative">
+                <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">
+                    Live Markets
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  {[
+                    {
+                      name: 'DexScreener',
+                      url: 'https://dexscreener.com'
+                    },
+                    {
+                      name: 'DEXTools',
+                      url: 'https://www.dextools.io'
+                    },
+                    {
+                      name: 'CoinGecko',
+                      url: 'https://www.coingecko.com'
+                    },
+                    {
+                      name: 'PancakeSwap',
+                      url: 'https://pancakeswap.finance'
+                    }
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-4 bg-white/5 border border-white/5 rounded-2xl text-[10px] font-black uppercase text-center tracking-widest hover:bg-[#ff5c00]/20 hover:border-[#ff5c00]/50 transition-all"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#ff5c00]/5 border border-[#ff5c00]/30 rounded-[40px] p-8 backdrop-blur-xl relative">
+                <div className="absolute -top-3 left-10 bg-[#050505] border border-[#ff5c00]/40 px-4 py-1 rounded-full">
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ff5c00]">
+                    Community
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-4 mt-4">
+                  {[
+                    {
+                      name: 'Twitter / X',
+                      url: 'https://twitter.com'
+                    },
+                    {
+                      name: 'Telegram',
+                      url: 'https://t.me'
+                    },
+                    {
+                      name: 'Discord',
+                      url: 'https://discord.com'
+                    }
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-4 bg-black/40 border border-white/10 rounded-2xl text-center text-xs font-black uppercase tracking-[0.3em] hover:bg-[#ff5c00] hover:text-white transition-all"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Ticker */}
           <div className="w-full overflow-hidden py-16 border-y border-white/5 relative bg-black/40 mb-20">
             <div className="animate-infinite-scroll flex gap-24 items-center">
-               {['Binance', 'Coinbase', 'Kraken', 'DEXTools', 'DexScreener', 'PancakeSwap', 'CoinGecko', 'Solana', 'Jupiter'].map((name, i) => (
-                 <span key={i} className="text-3xl font-black text-white/10 uppercase tracking-tighter hover:text-[#ff5c00] transition cursor-default">{name}</span>
-               ))}
+              {[
+                'Binance',
+                'Coinbase',
+                'Kraken',
+                'DEXTools',
+                'DexScreener',
+                'PancakeSwap',
+                'CoinGecko',
+                'Web3',
+                'USDX'
+              ].map((name, i) => (
+                <span
+                  key={i}
+                  className="text-3xl font-black text-white/10 uppercase tracking-tighter hover:text-[#ff5c00] transition cursor-default"
+                >
+                  {name}
+                </span>
+              ))}
             </div>
           </div>
-          </div>
         </main>
-        
-        <footer className="bg-black/60 pt-32 pb-16 border-t border-white/5 text-center">
-          <h1 className="text-3xl font-black uppercase tracking-tighter mb-4">USDX</h1>
-          <p className="text-[11px] text-gray-400 uppercase tracking-widest font-black">© 2026 USDX. All rights reserved.</p>
+
+        {/* Footer */}
+        <footer className="bg-black/60 pt-24 pb-16 border-t border-white/5 text-center">
+          <h1 className="text-4xl font-black uppercase tracking-tighter mb-4">
+            USDX
+          </h1>
+
+          <p className="text-gray-500 uppercase tracking-[0.3em] text-[10px] mb-6">
+            The Utility Token of USDExchange
+          </p>
+
+          <div className="flex justify-center gap-6 text-sm text-gray-400 mb-8">
+            <a href="#" className="hover:text-[#ff5c00] transition">
+              Telegram
+            </a>
+
+            <a href="#" className="hover:text-[#ff5c00] transition">
+              Twitter
+            </a>
+
+            <a href="#" className="hover:text-[#ff5c00] transition">
+              GitHub
+            </a>
+          </div>
+
+          <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">
+            © 2026 USDExchange. All rights reserved.
+          </p>
         </footer>
       </div>
     </div>
   );
 }
+
+This keeps your Web3 wallet connection untouched and fixes the JSX structure issue.
