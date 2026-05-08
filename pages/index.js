@@ -52,7 +52,10 @@ export default function Home() {
 
       <div className="relative z-10">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
-          <h1 className="text-2xl font-black tracking-tighter uppercase">USD EXCHANGE</h1>
+         <h1 className="text-2xl tracking-tighter uppercase leading-none">
+  <span className="font-[1000] text-3xl">USD</span>
+  <span className="font-light text-orange-500/80 ml-1 text-sm tracking-[0.2em]">Exchange</span>
+</h1> 
           <w3m-button />
         </nav>
 <main className="max-w-7xl mx-auto px-6 pt-20">
