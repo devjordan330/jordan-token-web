@@ -82,7 +82,7 @@ export default function Home() {
           <div className="flex flex-col items-center w-full">
             {/* 1. JOIN THE PACK BUTTON */}
             <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest mb-16">
-              Join the Pack
+              Join the Community
             </button>
            {/* --- STEP 2: CONTRACT ADDRESS SECTION --- */}
             <div className="w-full max-w-2xl mx-auto mb-16 px-4">
