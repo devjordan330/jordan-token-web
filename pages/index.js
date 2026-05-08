@@ -60,9 +60,9 @@ export default function Home() {
 />
 
           <div>
-            <h1 className="text-3xl font-black tracking-tight uppercase">
-              USDExchange
-            </h1>
+           <h1 className="text-3xl font-black tracking-tight">
+  USD<span className="lowercase">exchange</span>
+</h1>
 
             <p className="text-[#ff5c00] text-xs tracking-[0.4em] uppercase">
               Digital Economy
