@@ -52,10 +52,12 @@ export default function Home() {
 
       <div className="relative z-10">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 backdrop-blur-md">
-         <h1 className="text-2xl tracking-tighter uppercase leading-none">
-  <span className="font-[1000] text-3xl">USD</span>
-  <span className="font-light text-orange-500/80 ml-1 text-sm tracking-[0.2em]">Exchange</span>
-</h1> 
+        <h1 className="flex flex-col md:flex-row md:items-baseline leading-none tracking-tighter uppercase">
+  <span className="font-[1000] text-4xl md:text-5xl text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">USD</span>
+  <span className="font-medium text-[#ff5c00] text-[10px] md:text-[13px] tracking-[0.5em] md:ml-3 opacity-90 italic">
+    Exchange
+  </span>
+</h1>
           <w3m-button />
         </nav>
 <main className="max-w-7xl mx-auto px-6 pt-20">
