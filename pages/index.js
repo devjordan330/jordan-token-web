@@ -56,35 +56,43 @@ export default function Home() {
           <w3m-button />
         </nav>
 
-        <main className="max-w-7xl mx-auto px-6 pt-20">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-[110px] font-black mb-10 tracking-tighter uppercase leading-[0.82]">
-              Your gateway to the <br /> <span className="text-[#ff5c00]">digital economy</span>
-            </h2>
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-              <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest">Join the Pack</button>
-              
-              {/* NAYA SWAP BUTTON (BEP20 Support) */}
-              {/* LIVE CHART SECTION */}
-<div className="mt-24 w-full max-w-6xl mx-auto px-4">
-  <div className="mb-8 flex items-center gap-4">
-    <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/30"></div>
-    <div className="border border-[#ff5c00]/30 rounded-full px-6 py-1 text-[#ff5c00] text-[10px] font-black tracking-[0.3em] uppercase bg-[#ff5c00]/5">
-      Live Market Chart
-    </div>
-    <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/30"></div>
-  </div>
-  
-  <div className="w-full h-[600px] rounded-[40px] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(255,92,0,0.2)] bg-[#12141d] relative">
-    <iframe 
-      src="https://dexscreener.com/bsc/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c?embed=1&theme=dark&trades=0&info=0"
-      className="absolute inset-0 w-full h-full border-0"
-      title="Live Chart"
-    ></iframe>
-  </div>
-</div>
-         <div className="flex flex-col items-center w-full">
-          {/* JOIN THE PACK BUTTON */}
+       <main className="max-w-7xl mx-auto px-6 pt-20">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-[110px] font-black mb-10 tracking-tighter uppercase leading-[0.82]">
+            Your gateway to the <br /> <span className="text-[#ff5c00]">digital economy</span>
+          </h2>
+          
+          <div className="flex flex-col items-center w-full">
+            {/* 1. JOIN THE PACK BUTTON */}
+            <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest mb-16">
+              Join the Pack
+            </button>
+
+            {/* 2. LIVE CHART SECTION */}
+            <div className="w-full max-w-6xl mx-auto px-4 mb-16">
+              <div className="mb-8 flex items-center gap-4">
+                <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-[#ff5c00]/30"></div>
+                <div className="border border-[#ff5c00]/30 rounded-full px-6 py-1 text-[#ff5c00] text-[10px] font-black tracking-[0.3em] uppercase bg-[#ff5c00]/5">
+                  Live Market Chart
+                </div>
+                <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-[#ff5c00]/30"></div>
+              </div>
+              <div className="w-full h-[600px] rounded-[40px] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(255,92,0,0.2)] bg-[#12141d] relative">
+                <iframe 
+                  src="https://dexscreener.com/bsc/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c?embed=1&theme=dark&trades=0&info=0" 
+                  className="absolute inset-0 w-full h-full border-0" 
+                  title="Live Chart"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* 3. SWAP BUTTON (BEP20) */}
+            <button onClick={() => open({ view: 'Swap' })} className="bg-[#ff5c00] text-white px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-[0_0_30px_rgba(255,92,0,0.4)] tracking-widest mb-24">
+              Swap BEP20
+            </button>
+
+          </div> {/* Yeh Line 64 wale div ko close kar raha hai */}
+        </div> {/* Yeh Line 60 wale text-center div ko close kar raha hai */}
           <button className="bg-white text-black px-14 py-5 rounded-2xl font-black uppercase text-sm hover:scale-105 transition shadow-2xl tracking-widest mb-20">
             Join the Pack
           </button>
