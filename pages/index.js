@@ -246,24 +246,14 @@ export default function Home() {
   </div>
 
 <div className="mt-6">
-
- <div className="mt-6">
-
-<style jsx global>{`
-  w3m-button {
-    --w3m-accent: #ff5c00;
-    --w3m-color-mix: #ff5c00;
-    --w3m-color-mix-strength: 0;
-    width: 100%;
-  }
-`}</style>
+  <button
+    onClick={openWallet}
+    className="w-full h-[70px] rounded-[20px] bg-[#ff5c00]
+    text-black font-black text-[24px]"
+  >
+    CONNECT WALLET
+  </button>
 </div>
-</div>
-
-</div>
-            
-    </div>
-            
         </section>
 
         {/* STATS */}
