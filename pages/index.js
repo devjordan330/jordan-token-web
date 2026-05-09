@@ -1,9 +1,28 @@
 import React from 'react';
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react';
+import { ethers } from 'ethers';
 const openWallet = async () => {
-  await window.ethereum?.request({
-    method: 'eth_requestAccounts'
-  })
+  try {
+
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    })
+
+    const account = accounts[0]
+
+    setWallet(account)
+
+    const provider = new ethers.BrowserProvider(window.ethereum)
+
+    const balanceWei = await provider.getBalance(account)
+
+    const balanceEth = ethers.formatEther(balanceWei)
+
+    setBalance(parseFloat(balanceEth).toFixed(4))
+
+  } catch (err) {
+    console.log(err)
+  }
 }
 const projectId = 'f523ce22bed6a9a2acc600cadd1473c5';
 
@@ -38,6 +57,9 @@ createWeb3Modal({
 });
 
 export default function Home() {
+
+  const [wallet, setWallet] = React.useState(null)
+const [balance, setBalance] = React.useState('0')
 
   const chartBars = [40, 70, 55, 90, 60, 120, 85, 140, 100, 170, 130, 190];
 
@@ -201,7 +223,7 @@ export default function Home() {
       </div>
 
       <p className="text-right text-xs text-gray-500 mt-3">
-        Balance: 0.00
+        Balance: {balance}
       </p>
 
     </div>
@@ -230,7 +252,7 @@ export default function Home() {
       </div>
 
       <p className="text-right text-xs text-gray-500 mt-3">
-        Balance: 0.00
+        Balance: {balance}
       </p>
 
     </div>
@@ -246,13 +268,28 @@ export default function Home() {
   </div>
 
 <div className="mt-6">
-  <button
-    onClick={openWallet}
-    className="w-full h-[70px] rounded-[20px] bg-[#ff5c00]
-    text-black font-black text-[24px]"
-  >
-    CONNECT WALLET
-  </button>
+
+  {wallet ? (
+
+    <button
+      className="w-full h-[70px] rounded-[20px]
+      bg-green-500 text-black font-black text-[24px]"
+    >
+      SWAP TOKENS
+    </button>
+
+  ) : (
+
+    <button
+      onClick={openWallet}
+      className="w-full h-[70px] rounded-[20px]
+      bg-[#ff5c00] text-black font-black text-[24px]"
+    >
+      CONNECT WALLET
+    </button>
+
+  )}
+
 </div>
 
     </div>
