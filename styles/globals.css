@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+w3m-button {
+  width: 100%;
+}
+
+w3m-button::part(button) {
+  width: 100% !important;
+  height: 70px !important;
+  border-radius: 20px !important;
+  background-color: #ff5c00 !important;
+  color: black !important;
+  font-weight: 900 !important;
+  font-size: 24px !important;
+  border: none !important;
+}
