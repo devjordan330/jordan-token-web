@@ -642,7 +642,64 @@ export default function Home() {
           </div>
 
         </section>
+   <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
 
+  <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 hover:border-[#ff5c00]/40 transition-all backdrop-blur-xl">
+    
+    <div className="mb-5">
+      <span className="text-[#ff5c00] text-xs uppercase tracking-[0.3em] font-black">
+        Governance
+      </span>
+    </div>
+
+    <h3 className="text-3xl font-black mb-6">
+      Community Governance
+    </h3>
+
+    <p className="text-gray-400 leading-relaxed mb-6">
+      USDExchange aims to build a community-driven ecosystem where future
+      decisions and ecosystem expansion may involve community participation.
+    </p>
+
+    <ul className="space-y-4 text-gray-300">
+      <li>• Future ecosystem proposals</li>
+      <li>• Community participation</li>
+      <li>• Ecosystem growth ideas</li>
+      <li>• Governance-based expansion</li>
+      <li>• Transparent development vision</li>
+    </ul>
+
+  </div>
+
+  <div className="bg-[#ff5c00]/10 border border-[#ff5c00]/30 rounded-[35px] p-8 hover:border-[#ff5c00] transition-all backdrop-blur-xl">
+
+    <div className="mb-5">
+      <span className="text-[#ff5c00] text-xs uppercase tracking-[0.3em] font-black">
+        Community
+      </span>
+    </div>
+
+    <h3 className="text-3xl font-black mb-6">
+      Build USDExchange Together
+    </h3>
+
+    <p className="text-gray-300 leading-relaxed mb-6">
+      USDExchange is an early ecosystem project focused on future decentralized
+      technologies and community-driven expansion.
+    </p>
+
+    <p className="text-gray-400 leading-relaxed">
+      We invite developers, creators, supporters and Web3 enthusiasts to join
+      the ecosystem journey and help shape the future of USDExchange.
+    </p>
+
+    <button className="mt-8 px-8 py-4 bg-[#ff5c00] rounded-2xl font-black uppercase hover:scale-105 transition-all">
+      Join Community
+    </button>
+
+  </div>
+
+</section>
       </main>
 
       {/* FOOTER */}
