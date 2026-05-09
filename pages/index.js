@@ -37,34 +37,32 @@ createWeb3Modal({
 export default function Home() {
 
   const [wallet, setWallet] = React.useState(null)
-const [balance, setBalance] = React.useState('0')
-const openWallet = async () => {
+  const [balance, setBalance] = React.useState('0')
 
-  try {
+  const openWallet = async () => {
+    try {
 
-    const accounts = await window.ethereum.request({
-      method: 'eth_requestAccounts'
-    })
+      const accounts = await window.ethereum.request({
+        method: 'eth_requestAccounts'
+      })
 
-    const account = accounts[0]
+      const account = accounts[0]
 
-    setWallet(account)
+      setWallet(account)
 
-    const provider = new ethers.BrowserProvider(window.ethereum)
+      const provider = new ethers.BrowserProvider(window.ethereum)
 
-    const balanceWei = await provider.getBalance(account)
+      const balanceWei = await provider.getBalance(account)
 
-    const balanceEth = ethers.formatEther(balanceWei)
+      const balanceEth = ethers.formatEther(balanceWei)
 
-    setBalance(parseFloat(balanceEth).toFixed(4))
+      setBalance(parseFloat(balanceEth).toFixed(4))
 
-  } catch (err) {
-
-    console.log(err)
-
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-}
   const chartBars = [40, 70, 55, 90, 60, 120, 85, 140, 100, 170, 130, 190];
 
   return (
