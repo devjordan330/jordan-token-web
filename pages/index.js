@@ -281,14 +281,12 @@ export default function Home() {
     </button>
 
   ) : (
-
-    <button
-      onClick={openWallet}
-      className="w-full h-[70px] rounded-[20px]
-      bg-[#ff5c00] text-black font-black text-[24px]"
-    >
-      CONNECT WALLET
-    </button>
+<button
+  onClick={openWallet}
+  className="w-full h-[70px] rounded-[20px] bg-[#ff5c00] text-black font-black text-[24px]"
+>
+  {wallet ? `CONNECTED: ${balance} BNB` : 'CONNECT WALLET'}
+</button>
 
   )}
 
