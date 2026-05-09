@@ -258,24 +258,19 @@ React.useEffect(() => {
   </div>
 
 <div className="mt-6">
-<w3m-button label="CONNECT WALLET" />
-            <style jsx global>{`
-  w3m-button {
-    width: 100%;
-  }
+<div
+  onClick={() => {
+    const btn = document.querySelector('w3m-button')
+    btn?.click()
+  }}
+  className="w-full h-[70px] rounded-[20px] bg-[#ff5c00]
+  text-black font-black text-[24px]
+  flex items-center justify-center cursor-pointer"
+>
+  CONNECT WALLET
+</div>
 
-  w3m-button::part(button) {
-    width: 100% !important;
-    height: 70px !important;
-    border-radius: 20px !important;
-    background: #ff5c00 !important;
-    color: black !important;
-    font-weight: 900 !important;
-    font-size: 24px !important;
-    border: none !important;
-  }
-`}</style>
-  <w3m-button style={{ display: 'none' }} />
+<w3m-button style={{ display: 'none' }} />
 </div>
 
 </div>
