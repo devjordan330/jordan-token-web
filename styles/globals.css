@@ -5,7 +5,7 @@ w3m-button {
   width: 100%;
 }
 
-w3m-button::part(button) {
+ {
   width: 100% !important;
   height: 70px !important;
   border-radius: 20px !important;
