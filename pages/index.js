@@ -241,8 +241,28 @@ export default function Home() {
 
   </div>
 
- <div className="mt-6">
+<div className="mt-6">
+
   <w3m-button />
+
+  <style jsx>{`
+    w3m-button {
+      width: 100%;
+    }
+
+    w3m-button::part(button) {
+      width: 100%;
+      height: 70px;
+      border-radius: 20px;
+      background: #ff5c00;
+      color: black;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 20px;
+      border: none;
+    }
+  `}</style>
+
 </div>
 
 </div>
