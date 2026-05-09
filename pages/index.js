@@ -40,6 +40,12 @@ export default function Home() {
   const [balance, setBalance] = React.useState('0')
 
   const openWallet = async () => {
+    
+    if (!window.ethereum) {
+  alert('MetaMask not detected')
+  return
+}
+    
     try {
 
       const accounts = await window.ethereum.request({
