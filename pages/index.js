@@ -44,12 +44,14 @@ React.useEffect(() => {
   const btn = document.getElementById('custom-connect')
 
   if (btn) {
-    btn.onclick = () => {
-      const realBtn = document.querySelector('w3m-button')
-      const shadowBtn =
-        realBtn?.shadowRoot?.querySelector('button')
+ const modal = document.querySelector('w3m-modal')
 
-      shadowBtn?.click()
+if (modal) {
+  modal.open()
+} else {
+  const btn = document.querySelector('w3m-button')
+  btn?.click()
+}
     }
   }
 }, [])
