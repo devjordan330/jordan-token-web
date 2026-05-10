@@ -692,7 +692,7 @@ pb-2
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
 
             {[
               'Install Trust Wallet or MetaMask',
@@ -702,7 +702,7 @@ pb-2
             ].map((step, index) => (
               <div
                 key={index}
-                className="bg-white/[0.03] border border-white/10 rounded-[30px] p-6"
+                className="min-w-[240px] md:min-w-0 bg-white/[0.03] border border-white/10 rounded-[26px] p-5 snap-center"
               >
 
                 <div className="w-12 h-12 rounded-full bg-[#ff5c00] flex items-center justify-center font-black mb-6">
@@ -813,7 +813,7 @@ pb-2
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
 
             <a
               href="https://twitter.com"
