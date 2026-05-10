@@ -490,9 +490,20 @@ no-scrollbar
 
         </section>
         {/* STATS */}
-        <section className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+        <section className="
+flex
+md:grid
+md:grid-cols-4
+gap-4
+mb-14
+overflow-x-auto
+snap-x
+snap-mandatory
+no-scrollbar
+pb-2
+">
 
-          <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 text-center">
+          <div className="min-w-[220px] md:min-w-0 snap-center bg-white/[0.03] border border-white/10 rounded-[28px] p-6 text-center">
             <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
               Liquidity
             </p>
@@ -502,7 +513,7 @@ no-scrollbar
             </h3>
           </div>
 
-          <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 text-center">
+          <div className="min-w-[220px] md:min-w-0 snap-center bg-white/[0.03] border border-white/10 rounded-[28px] p-6 text-center">
             <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
               Holders
             </p>
@@ -512,7 +523,7 @@ no-scrollbar
             </h3>
           </div>
 
-          <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 text-center">
+          <div className="min-w-[220px] md:min-w-0 snap-center bg-white/[0.03] border border-white/10 rounded-[28px] p-6 text-center">
             <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
               Volume
             </p>
@@ -522,7 +533,7 @@ no-scrollbar
             </h3>
           </div>
 
-          <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-8 text-center">
+          <div className="min-w-[220px] md:min-w-0 snap-center bg-white/[0.03] border border-white/10 rounded-[28px] p-6 text-center">
             <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
               Blockchain
             </p>
