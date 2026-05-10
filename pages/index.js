@@ -43,6 +43,37 @@ const [toToken, setToToken] = React.useState('USDX')
 
 const [fromAmount, setFromAmount] = React.useState('')
 const [toAmount, setToAmount] = React.useState('')
+  React.useEffect(() => {
+
+  const calculateSwap = async () => {
+
+    if (!fromAmount || fromAmount <= 0) {
+      setToAmount('')
+      return
+    }
+
+    const prices = {
+      BNB: 650,
+      WBNB: 650,
+      USDT: 1,
+      USDC: 1,
+      DAI: 1,
+      USDX: 1
+    }
+
+    const fromPrice = prices[fromToken]
+    const toPrice = prices[toToken]
+
+    const usdValue = fromAmount * fromPrice
+
+    const received = usdValue / toPrice
+
+    setToAmount(received.toFixed(4))
+  }
+
+  calculateSwap()
+
+}, [fromAmount, fromToken, toToken])
 
   const openWallet = async () => {
     
