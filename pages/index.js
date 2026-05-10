@@ -123,7 +123,7 @@ const executeSwap = async () => {
 />
 
           <div>
-           <h1 className="text-3xl font-black tracking-tight">
+           <h1 className="text-2xl font-black tracking-tight">
   USD<span className="lowercase">exchange</span>
 </h1>
 
@@ -212,7 +212,7 @@ const executeSwap = async () => {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-white/[0.03] border border-white/10 rounded-[20px] p-2 backdrop-blur-xl">
+          <div className="bg-white/[0.03] border border-white/10 rounded-[20px] p-3 max-w-[360px] mx-auto backdrop-blur-xl">
 
             <div className="flex justify-between items-center mb-6">
 
@@ -247,7 +247,7 @@ const executeSwap = async () => {
 
     <div>
 
-      <h2 className="text-3xl font-black">
+      <h2 className="text-2xl font-black">
         Swap
       </h2>
 
@@ -278,7 +278,7 @@ const executeSwap = async () => {
   </div>
 
   {/* FROM */}
-  <div className="bg-black border border-white/10 rounded-[24px] p-4">
+  <div className="bg-black border border-white/10 rounded-[18px] p-3">
 
     <div className="flex justify-between items-center mb-4">
 
@@ -299,13 +299,13 @@ const executeSwap = async () => {
         value={fromAmount}
         onChange={(e) => setFromAmount(e.target.value)}
         placeholder="0.0"
-        className="bg-transparent outline-none text-3xl font-black w-full text-white"
+        className="bg-transparent outline-none text-2xl font-black w-full text-white"
       />
 
       <select
         value={fromToken}
         onChange={(e) => setFromToken(e.target.value)}
-        className="bg-[#ff5c00] text-black px-5 py-4 rounded-2xl font-black outline-none cursor-pointer"
+        className="bg-[#ff5c00] text-black px-3 py-2 rounded-2xl font-black outline-none cursor-pointer"
       >
         <option>BNB</option>
         <option>WBNB</option>
@@ -324,7 +324,7 @@ const executeSwap = async () => {
 
     <button
       onClick={switchTokens}
-      className="w-14 h-14 rounded-full bg-[#ff5c00]
+      className="w-10 h-10 rounded-full bg-[#ff5c00]
       text-black text-lg font-black
       border-[5px] border-black
       hover:rotate-180 transition-all duration-500"
@@ -335,7 +335,7 @@ const executeSwap = async () => {
   </div>
 
   {/* TO */}
-  <div className="bg-black border border-white/10 rounded-[24px] p-4">
+  <div className="bg-black border border-white/10 rounded-[18px] p-3">
 
     <div className="flex justify-between items-center mb-4">
 
@@ -356,13 +356,13 @@ const executeSwap = async () => {
         value={toAmount}
         onChange={(e) => setToAmount(e.target.value)}
         placeholder="0.0"
-        className="bg-transparent outline-none text-3xl font-black w-full text-white"
+        className="bg-transparent outline-none text-2xl font-black w-full text-white"
       />
 
       <select
         value={toToken}
         onChange={(e) => setToToken(e.target.value)}
-        className="bg-[#ff5c00] text-black px-5 py-4 rounded-2xl font-black outline-none cursor-pointer"
+        className="bg-[#ff5c00] text-black px-3 py-2 rounded-2xl font-black outline-none cursor-pointer"
       >
         <option>USDX</option>
         <option>USDT</option>
@@ -411,7 +411,7 @@ const executeSwap = async () => {
     {wallet ? (
 
       <button
-        className="w-full h-[58px]
+        className="w-full h-[48px]
         rounded-[24px]
         bg-[#ff5c00]
         text-black
@@ -427,7 +427,7 @@ const executeSwap = async () => {
 
     <button
   onClick={executeSwap}
-  className="w-full h-[58px]
+  className="w-full h-[48px]
   rounded-[24px]
   bg-[#ff5c00]
   text-black
@@ -455,7 +455,7 @@ const executeSwap = async () => {
               Liquidity
             </p>
 
-            <h3 className="text-3xl font-black text-[#ff5c00]">
+            <h3 className="text-2xl font-black text-[#ff5c00]">
               $500K
             </h3>
           </div>
@@ -465,7 +465,7 @@ const executeSwap = async () => {
               Holders
             </p>
 
-            <h3 className="text-3xl font-black text-[#ff5c00]">
+            <h3 className="text-2xl font-black text-[#ff5c00]">
               12K+
             </h3>
           </div>
@@ -475,7 +475,7 @@ const executeSwap = async () => {
               Volume
             </p>
 
-            <h3 className="text-3xl font-black text-[#ff5c00]">
+            <h3 className="text-2xl font-black text-[#ff5c00]">
               $2.4M
             </h3>
           </div>
@@ -485,7 +485,7 @@ const executeSwap = async () => {
               Blockchain
             </p>
 
-            <h3 className="text-3xl font-black text-[#ff5c00]">
+            <h3 className="text-2xl font-black text-[#ff5c00]">
               BEP20
             </h3>
           </div>
@@ -543,7 +543,7 @@ const executeSwap = async () => {
                 Governance
               </p>
 
-              <h3 className="text-3xl font-black mb-6">
+              <h3 className="text-2xl font-black mb-6">
                 Community Powered Decisions
               </h3>
 
@@ -566,7 +566,7 @@ const executeSwap = async () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-3xl font-black uppercase mb-4">
+            <h2 className="text-2xl font-black uppercase mb-4">
               Roadmap
             </h2>
 
@@ -629,7 +629,7 @@ const executeSwap = async () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-3xl font-black uppercase mb-4">
+            <h2 className="text-2xl font-black uppercase mb-4">
               How To Buy USDX
             </h2>
 
@@ -675,7 +675,7 @@ const executeSwap = async () => {
 
           <div className="bg-[#ff5c00]/10 border border-[#ff5c00]/30 rounded-[35px] p-10 text-center">
 
-            <h3 className="text-3xl font-black mb-6">
+            <h3 className="text-2xl font-black mb-6">
               USDExchange Whitepaper
             </h3>
 
@@ -710,7 +710,7 @@ const executeSwap = async () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-3xl font-black uppercase mb-4">
+            <h2 className="text-2xl font-black uppercase mb-4">
               Powered By
             </h2>
 
@@ -750,7 +750,7 @@ const executeSwap = async () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-3xl font-black uppercase mb-4">
+            <h2 className="text-2xl font-black uppercase mb-4">
               Join Community
             </h2>
 
@@ -841,7 +841,7 @@ const executeSwap = async () => {
       </span>
     </div>
 
-    <h3 className="text-3xl font-black mb-6">
+    <h3 className="text-2xl font-black mb-6">
       Community Governance
     </h3>
 
@@ -868,7 +868,7 @@ const executeSwap = async () => {
       </span>
     </div>
 
-    <h3 className="text-3xl font-black mb-6">
+    <h3 className="text-2xl font-black mb-6">
       Build USDExchange Together
     </h3>
 
@@ -896,7 +896,7 @@ const executeSwap = async () => {
 
         <div className="max-w-5xl mx-auto px-6">
 
-          <h1 className="text-3xl font-black uppercase tracking-tight mb-4">
+          <h1 className="text-2xl font-black uppercase tracking-tight mb-4">
             USDX
           </h1>
 
