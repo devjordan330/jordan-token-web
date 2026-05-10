@@ -166,7 +166,7 @@ const switchTokens = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl md:text-7xl font-black uppercase leading-none mb-8">
+            <h2 className="text-3xl md:text-3xl md:text-7xl font-black uppercase leading-none mb-8">
               Advanced
               <br />
               <span className="text-[#ff5c00]">
@@ -203,7 +203,7 @@ const switchTokens = () => {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-white/[0.03] border border-white/10 rounded-[35px] p-6 backdrop-blur-xl">
+          <div className="bg-white/[0.03] border border-white/10 rounded-[28px] p-5 backdrop-blur-xl">
 
             <div className="flex justify-between items-center mb-6">
 
@@ -231,7 +231,7 @@ const switchTokens = () => {
 </div>
 
   {/* ADVANCED BSC SWAP */}
-<div className="mt-6 bg-[#0b0b0b] border border-white/10 rounded-[35px] p-6 backdrop-blur-2xl shadow-2xl">
+<div className="mt-6 bg-[#0b0b0b] border border-white/10 rounded-[28px] p-5 backdrop-blur-2xl shadow-2xl">
 
   {/* TOP */}
   <div className="flex items-center justify-between mb-7">
@@ -269,7 +269,7 @@ const switchTokens = () => {
   </div>
 
   {/* FROM */}
-  <div className="bg-black border border-white/10 rounded-[30px] p-5">
+  <div className="bg-black border border-white/10 rounded-[24px] p-4">
 
     <div className="flex justify-between items-center mb-4">
 
@@ -290,7 +290,7 @@ const switchTokens = () => {
         value={fromAmount}
         onChange={(e) => setFromAmount(e.target.value)}
         placeholder="0.0"
-        className="bg-transparent outline-none text-5xl font-black w-full text-white"
+        className="bg-transparent outline-none text-3xl font-black w-full text-white"
       />
 
       <select
@@ -315,9 +315,9 @@ const switchTokens = () => {
 
     <button
       onClick={switchTokens}
-      className="w-20 h-20 rounded-full bg-[#ff5c00]
-      text-black text-4xl font-black
-      border-[8px] border-black
+      className="w-14 h-14 rounded-full bg-[#ff5c00]
+      text-black text-lg font-black
+      border-[5px] border-black
       hover:rotate-180 transition-all duration-500"
     >
       ⇅
@@ -326,7 +326,7 @@ const switchTokens = () => {
   </div>
 
   {/* TO */}
-  <div className="bg-black border border-white/10 rounded-[30px] p-5">
+  <div className="bg-black border border-white/10 rounded-[24px] p-4">
 
     <div className="flex justify-between items-center mb-4">
 
@@ -347,7 +347,7 @@ const switchTokens = () => {
         value={toAmount}
         onChange={(e) => setToAmount(e.target.value)}
         placeholder="0.0"
-        className="bg-transparent outline-none text-5xl font-black w-full text-white"
+        className="bg-transparent outline-none text-3xl font-black w-full text-white"
       />
 
       <select
@@ -402,7 +402,7 @@ const switchTokens = () => {
     {wallet ? (
 
       <button
-        className="w-full h-[68px]
+        className="w-full h-[58px]
         rounded-[24px]
         bg-[#ff5c00]
         text-black
@@ -418,7 +418,7 @@ const switchTokens = () => {
 
       <button
         onClick={openWallet}
-        className="w-full h-[68px]
+        className="w-full h-[58px]
         rounded-[24px]
         bg-[#ff5c00]
         text-black
@@ -490,7 +490,7 @@ const switchTokens = () => {
               What Is USDExchange
             </p>
 
-            <h3 className="text-4xl font-black mb-6">
+            <h3 className="text-2xl font-black mb-6">
               A Future Web3 Ecosystem
             </h3>
 
@@ -506,7 +506,7 @@ const switchTokens = () => {
               What Is USDX
             </p>
 
-            <h3 className="text-4xl font-black mb-6">
+            <h3 className="text-2xl font-black mb-6">
               Ecosystem Utility Token
             </h3>
 
@@ -532,7 +532,7 @@ const switchTokens = () => {
                 Governance
               </p>
 
-              <h3 className="text-5xl font-black mb-6">
+              <h3 className="text-3xl font-black mb-6">
                 Community Powered Decisions
               </h3>
 
@@ -555,7 +555,7 @@ const switchTokens = () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-5xl font-black uppercase mb-4">
+            <h2 className="text-3xl font-black uppercase mb-4">
               Roadmap
             </h2>
 
@@ -618,7 +618,7 @@ const switchTokens = () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-5xl font-black uppercase mb-4">
+            <h2 className="text-3xl font-black uppercase mb-4">
               How To Buy USDX
             </h2>
 
@@ -664,7 +664,7 @@ const switchTokens = () => {
 
           <div className="bg-[#ff5c00]/10 border border-[#ff5c00]/30 rounded-[35px] p-10 text-center">
 
-            <h3 className="text-5xl font-black mb-6">
+            <h3 className="text-3xl font-black mb-6">
               USDExchange Whitepaper
             </h3>
 
@@ -699,7 +699,7 @@ const switchTokens = () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-5xl font-black uppercase mb-4">
+            <h2 className="text-3xl font-black uppercase mb-4">
               Powered By
             </h2>
 
@@ -739,7 +739,7 @@ const switchTokens = () => {
 
           <div className="text-center mb-14">
 
-            <h2 className="text-5xl font-black uppercase mb-4">
+            <h2 className="text-3xl font-black uppercase mb-4">
               Join Community
             </h2>
 
@@ -885,7 +885,7 @@ const switchTokens = () => {
 
         <div className="max-w-5xl mx-auto px-6">
 
-          <h1 className="text-5xl font-black uppercase tracking-tight mb-4">
+          <h1 className="text-3xl font-black uppercase tracking-tight mb-4">
             USDX
           </h1>
 
