@@ -205,7 +205,7 @@ export default function Home() {
 
 </div>
 
-          {/* SWAP */}
+   {/* SWAP */}
 <div className="bg-black/40 rounded-2xl p-5 border border-white/5 mt-6">
 
   <div className="flex items-center justify-between mb-5">
@@ -245,12 +245,10 @@ export default function Home() {
         />
 
         <select className="bg-[#ff5c00] text-black px-5 py-3 rounded-2xl font-black outline-none">
-
           <option>BNB</option>
           <option>USDT</option>
           <option>ETH</option>
           <option>BTC</option>
-
         </select>
 
       </div>
@@ -259,9 +257,7 @@ export default function Home() {
 
     <div className="flex justify-center">
 
-      <button
-        className="w-14 h-14 rounded-full bg-[#ff5c00] text-black text-3xl font-black"
-      >
+      <button className="w-14 h-14 rounded-full bg-[#ff5c00] text-black text-3xl font-black">
         ⇅
       </button>
 
@@ -290,13 +286,11 @@ export default function Home() {
         />
 
         <select className="bg-[#ff5c00] text-black px-5 py-3 rounded-2xl font-black outline-none">
-
           <option>USDX</option>
           <option>USDT</option>
           <option>ETH</option>
           <option>BTC</option>
           <option>BNB</option>
-
         </select>
 
       </div>
@@ -315,17 +309,13 @@ export default function Home() {
 
       {wallet ? (
 
-        <button
-          className="w-full h-[72px] rounded-[24px] bg-green-500 text-black text-2xl font-black"
-        >
+        <button className="w-full h-[72px] rounded-[24px] bg-green-500 text-black text-2xl font-black">
           SWAP TOKENS • {balance} BNB
         </button>
 
       ) : (
 
-        <button
-          className="w-full h-[72px] rounded-[24px] bg-[#ff5c00] text-black text-2xl font-black"
-        >
+        <button className="w-full h-[72px] rounded-[24px] bg-[#ff5c00] text-black text-2xl font-black">
           CONNECT WALLET ABOVE
         </button>
 
@@ -336,9 +326,10 @@ export default function Home() {
   </div>
 
 </div>
-      
-        </section>
 
+          </div>
+
+        </section>
         {/* STATS */}
         <section className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
 
