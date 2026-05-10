@@ -212,7 +212,7 @@ const executeSwap = async () => {
           </div>
 
           {/* RIGHT */}
-          <div className="bg-white/[0.03] border border-white/10 rounded-[20px] p-3 max-w-[360px] mx-auto backdrop-blur-xl">
+          <div className="bg-white/[0.03] border border-white/10 rounded-[20px] p-3 max-w-[420px] mx-auto backdrop-blur-xl">
 
             <div className="flex justify-between items-center mb-6">
 
