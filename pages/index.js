@@ -113,7 +113,7 @@ const executeSwap = async () => {
       />
 
       {/* NAVBAR */}
-    <nav className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-4 px-3 md:px-6 py-4 md:py-6 border-b border-white/10 backdrop-blur-md">
+    <nav className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-5 px-4 md:px-6 py-5 border-b border-white/10 backdrop-blur-xl bg-black/70 sticky top-0">
         <div className="flex items-center gap-4">
 
          <img
