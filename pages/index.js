@@ -972,7 +972,7 @@ pb-2
   </div>
 
 </div>
-      <footer className="border-t border-white/10 py-16 text-center relative z-10 bg-black/40">
+      <footer className="border-t border-white/10 py-10 md:py-16 text-center relative z-10 bg-black/40 pb-24 md:pb-16">
 
         <div className="max-w-5xl mx-auto px-6">
 
@@ -1004,7 +1004,7 @@ pb-2
 
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500 uppercase tracking-widest">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] md:text-sm text-gray-500 uppercase tracking-[0.25em]">
 
             <span>BEP20</span>
             <span>Web3</span>
