@@ -186,7 +186,7 @@ export default function Home() {
 
             </div>
 
-            <div className="h-[680px] rounded-[28px] overflow-hidden border border-white/10">
+            <div className="h-[680px] rounded-[28px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(124,58,237,0.15)]">
 
               <iframe
                 src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark&style=1"
