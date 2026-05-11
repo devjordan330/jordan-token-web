@@ -538,6 +538,8 @@ export default function Home() {
 
             </div>
 
+           </div>
+
             {/* CENTER CHART */}
             <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6">
 
