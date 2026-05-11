@@ -168,11 +168,11 @@ export default function Home() {
       <main className="max-w-[1600px] mx-auto px-4 md:px-8 pt-6 pb-24">
 
         {/* HERO */}
-       <section className="grid xl:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
+       <section className="grid xl:grid-cols-[1.65fr_0.55fr] gap-5 items-start">
 
          
           {/* CHART */}
-         <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6 min-h-[680px]">
+         <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6 min-h-[760px]">
 
             <div className="flex justify-between items-center mb-6">
 
@@ -186,7 +186,7 @@ export default function Home() {
 
             </div>
 
-            <div className="h-[580px] rounded-[28px] overflow-hidden border border-white/10">
+            <div className="h-[680px] rounded-[28px] overflow-hidden border border-white/10">
 
               <iframe
                 src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark&style=1"
