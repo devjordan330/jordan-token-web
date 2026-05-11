@@ -480,7 +480,6 @@ export default function Home() {
             {/* LEFT */}
             <div className="border border-white/10 rounded-[35px] bg-[#090909] p-8 min-h-[650px]">
 
-            <div className="border border-white/10 rounded-[30px] bg-[#090909] p-6 min-h-[540px]">
 
   <h1 className="text-7xl font-black mb-6">
     USDX
