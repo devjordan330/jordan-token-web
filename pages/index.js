@@ -168,7 +168,7 @@ export default function Home() {
       <main className="max-w-[1600px] mx-auto px-4 md:px-8 pt-6 pb-24">
 
         {/* HERO */}
-        <section className="grid xl:grid-cols-[1.45fr_0.75fr] gap-6">
+       <section className="grid xl:grid-cols-[1.45fr_0.55fr] gap-4 items-start">
 
           {/* LEFT */}
          {/* BIG CHART */}
