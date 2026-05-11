@@ -120,24 +120,74 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-[78px] flex items-center justify-between">
 
           {/* LEFT */}
-          <div className="flex items-center gap-3">
+        {/* LEFT */}
+<div className="border border-white/10 rounded-[30px] bg-[#090909] p-6 min-h-[540px]">
 
-            <img
-              src="/logo.png"
-              alt="logo"
-              className="w-12 h-12 object-contain"
-            />
+  <div className="flex items-center gap-3 mb-8">
 
-            <div className="flex items-center gap-2">
+    <img
+      src="/logo.png"
+      alt="logo"
+      className="w-14 h-14"
+    />
 
-              <h1 className="text-xl md:text-2xl font-black">
-                USDX
-              </h1>
+    <h1 className="text-5xl font-black">
+      USDX
+    </h1>
 
-            </div>
+  </div>
 
-          </div>
+  <h2 className="text-4xl font-black leading-tight mb-5">
+    Decentralized
+    <br />
+    Exchange Ecosystem
+  </h2>
 
+  <p className="text-gray-400 text-base leading-relaxed mb-8">
+    Trade, earn, stake and grow with the future of decentralized finance powered by USDExchange.
+  </p>
+
+  <div className="flex gap-4 mb-8">
+
+    <button className="h-[52px] px-8 rounded-2xl bg-violet-600 hover:bg-violet-500 transition font-bold">
+      Launch App
+    </button>
+
+    <button className="h-[52px] px-8 rounded-2xl border border-white/10 hover:border-violet-500 transition font-bold">
+      Buy USDX
+    </button>
+
+  </div>
+
+  <div className="grid grid-cols-2 gap-4">
+
+    {[
+      ['$1.2M+', 'Market Cap'],
+      ['5,432+', 'Holders'],
+      ['$320K+', 'Liquidity'],
+      ['12.4%', 'APY']
+    ].map(([v, t]) => (
+
+      <div
+        key={t}
+        className="bg-black border border-white/10 rounded-[22px] p-5"
+      >
+
+        <h3 className="text-2xl font-black mb-2">
+          {v}
+        </h3>
+
+        <p className="text-gray-500 text-sm">
+          {t}
+        </p>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
           {/* CENTER */}
           <div className="hidden md:flex items-center gap-10">
 
@@ -425,12 +475,12 @@ export default function Home() {
         <div className="hidden md:block">
 
           {/* HERO GRID */}
-          <section className="grid xl:grid-cols-[0.85fr_1.1fr_0.75fr] gap-6 items-start">
+          <section className="grid xl:grid-cols-[0.8fr_1fr_0.72fr] gap-4 items-start">
 
             {/* LEFT */}
             <div className="border border-white/10 rounded-[35px] bg-[#090909] p-8 min-h-[650px]">
 
-              <h1 className="text-7xl font-black mb-8">
+              <div className="border border-white/10 rounded-[30px] bg-[#090909] p-6 min-h-[540px]">
                 USDX
               </h1>
 
