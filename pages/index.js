@@ -339,73 +339,6 @@ export default function Home() {
 
   <div className="space-y-4">
 
-    {/* POSITION 1 */}
-    <div className="border border-cyan-500/10 rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
-
-      <div className="flex justify-between mb-2">
-
-        <span className="text-xs font-black tracking-wide text-green-400">
-          BUY USDX
-        </span>
-
-        <span className="text-green-400 text-sm font-black">
-          +12.45%
-        </span>
-
-      </div>
-
-      <div className="flex justify-between text-[11px] text-gray-500 tracking-wide">
-
-        <span>
-          Entry: 0.0084
-        </span>
-
-        <span>
-          Size: 250 USD
-        </span>
-
-      </div>
-
-    </div>
-
-    {/* POSITION 2 */}
-    <div className=" rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
-
-      <div className="flex justify-between mb-2">
-
-        <span className="text-xs font-black tracking-wide text-red-400">
-          SELL BNB
-        </span>
-
-        <span className="text-red-400 text-sm font-black">
-          -2.14%
-        </span>
-
-      </div>
-
-      <div className="flex justify-between text-[11px] text-gray-500 tracking-wide">
-
-        <span>
-          Entry: 602
-        </span>
-
-        <span>
-          Size: 120 USD
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-      </div>
-
-  {/* LIVE TRADES */}
-
   <div className="mt-4 border border-cyan-500/10 rounded-[18px] bg-[#08111f] overflow-hidden">
 
     <div className="flex items-center justify-between px-4 py-3 border-b border-cyan-500/10">
@@ -474,6 +407,73 @@ export default function Home() {
 
   </div>
 
+
+    {/* POSITION 1 */}
+    <div className="border border-cyan-500/10 rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
+
+      <div className="flex justify-between mb-2">
+
+        <span className="text-xs font-black tracking-wide text-green-400">
+          BUY USDX
+        </span>
+
+        <span className="text-green-400 text-sm font-black">
+          +12.45%
+        </span>
+
+      </div>
+
+      <div className="flex justify-between text-[11px] text-gray-500 tracking-wide">
+
+        <span>
+          Entry: 0.0084
+        </span>
+
+        <span>
+          Size: 250 USD
+        </span>
+
+      </div>
+
+    </div>
+
+    {/* POSITION 2 */}
+    <div className=" rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
+
+      <div className="flex justify-between mb-2">
+
+        <span className="text-xs font-black tracking-wide text-red-400">
+          SELL BNB
+        </span>
+
+        <span className="text-red-400 text-sm font-black">
+          -2.14%
+        </span>
+
+      </div>
+
+      <div className="flex justify-between text-[11px] text-gray-500 tracking-wide">
+
+        <span>
+          Entry: 602
+        </span>
+
+        <span>
+          Size: 120 USD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+      </div>
+
+  
 
         </section>
 
