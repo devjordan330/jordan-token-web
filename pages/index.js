@@ -197,6 +197,7 @@ export default function Home() {
   </span>
 
 </div>
+        </div>
 
             <div className="h-[640px] rounded-[18px] overflow-hidden border border-cyan-500/10 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
 
