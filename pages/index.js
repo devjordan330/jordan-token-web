@@ -115,7 +115,7 @@ export default function Home() {
               className="w-11 h-11 rounded-full"
             />
 
-            <h1 className="text-2xl font-black">
+            <h1 className="text-lg font-black tracking-[2px] text-cyan-400">
               USDX
             </h1>
 
@@ -172,24 +172,24 @@ export default function Home() {
 
          
           {/* CHART */}
-         <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6 min-h-[760px] flex flex-col">
+         <div className="border border-cyan-500/10 rounded-[35px] bg-[#090909] p-6 min-h-[760px] flex flex-col">
 
             <div className="flex justify-between items-center mb-6">
 
-              <h2 className="text-2xl font-black">
+              <h2 className="text-lg font-black tracking-[2px] text-cyan-400">
                 USDX / BNB
               </h2>
 
-              <span className="text-green-400 font-black text-xl">
+              <span className="text-green-400 font-black text-sm">
                 +12.45%
               </span>
 
             </div>
 
-            <div className="h-[640px] rounded-[28px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(124,58,237,0.15)]">
+            <div className="h-[640px] rounded-[18px] overflow-hidden border border-cyan-500/10 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
 
               <iframe
-                src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark&style=1"
+                src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BNBUSDT&interval=15&theme=dark&style=1"
                 width="100%"
                 height="100%"
                 frameBorder="0"
@@ -216,7 +216,7 @@ export default function Home() {
 
 
             {/* FROM */}
-            <div className="bg-black border border-white/10 rounded-[16px] p-4">
+            <div className="bg-black border border-cyan-500/10 rounded-[16px] p-4">
 
               <div className="flex justify-between text-[11px] text-cyan-400/70 uppercase tracking-[2px] mb-3 font-bold">
 
@@ -265,7 +265,7 @@ export default function Home() {
             </div>
 
             {/* TO */}
-            <div className="bg-black border border-white/10 rounded-[16px] p-4">
+            <div className="bg-black border border-cyan-500/10 rounded-[16px] p-4">
 
               <div className="flex justify-between text-[11px] text-cyan-400/70 uppercase tracking-[2px] mb-3 font-bold">
 
@@ -310,7 +310,7 @@ export default function Home() {
 
          {/* OPEN POSITIONS */}
 
-<div className="mt-4 border border-white/10 rounded-[18px] bg-[#050816] p-5">
+<div className="mt-4 border border-cyan-500/10 rounded-[18px] bg-[#050816] p-5">
 
   <div className="flex items-center justify-between mb-5">
 
@@ -327,7 +327,7 @@ export default function Home() {
   <div className="space-y-4">
 
     {/* POSITION 1 */}
-    <div className="border border-white/10 rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
+    <div className="border border-cyan-500/10 rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
 
       <div className="flex justify-between mb-2">
 
@@ -356,7 +356,7 @@ export default function Home() {
     </div>
 
     {/* POSITION 2 */}
-    <div className="border border-white/10 rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
+    <div className=" rounded-[14px] p-3 bg-[#0b1120] border border-cyan-500/10">
 
       <div className="flex justify-between mb-2">
 
@@ -408,10 +408,10 @@ export default function Home() {
             <a
               key={title}
               href={link}
-              className="border border-white/10 rounded-[30px] bg-[#090909] p-6 hover:border-violet-500 transition block"
+              className="border border-cyan-500/10 rounded-[30px] bg-[#090909] p-6 hover:border-violet-500 transition block"
             >
 
-              <h3 className="text-2xl font-black mb-4">
+              <h3 className="text-lg font-black tracking-[2px] text-cyan-400 mb-4">
                 {title}
               </h3>
 
