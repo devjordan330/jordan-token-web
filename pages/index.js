@@ -302,12 +302,15 @@ export default function Home() {
 
             <button
               onClick={openWallet}
-              className="w-full h-[60px] rounded-[22px] bg-violet-600 hover:bg-violet-500 transition text-xl font-black mt-8"
+              className="w-full h-[52px] rounded-[16px] bg-violet-600 hover:bg-violet-500 transition text-xl font-black mt-4"
             >
               {wallet ? 'Start Swap' : 'Connect Wallet'}
+
+            </button>
+
          {/* OPEN POSITIONS */}
 
-<div className="mt-8 border border-white/10 rounded-[24px] bg-black p-5">
+<div className="mt-4 border border-white/10 rounded-[24px] bg-black p-5">
 
   <div className="flex items-center justify-between mb-5">
 
@@ -391,7 +394,7 @@ export default function Home() {
         </section>
 
         {/* FEATURES */}
-        <section className="grid md:grid-cols-5 gap-5 mt-8">
+        <section className="grid md:grid-cols-5 gap-5 mt-4">
        
    {[
  ['Roadmap', '/info#roadmap'],
