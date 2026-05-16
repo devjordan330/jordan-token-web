@@ -181,8 +181,21 @@ export default function Home() {
               </h2>
 
               <span className="text-green-400 font-black text-sm">
-                +12.45%
-              </span>
+              <div className="flex items-center gap-4">
+
+  <span className="text-green-400 font-black text-sm">
+    +12.45%
+  </span>
+
+  <span className="text-[11px] text-gray-400">
+    MCAP $2.4M
+  </span>
+
+  <span className="text-[11px] text-gray-400">
+    VOL $428K
+  </span>
+
+</div>
 
             </div>
 
