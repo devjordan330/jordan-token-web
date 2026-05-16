@@ -121,7 +121,7 @@ export default function Home() {
 
           </div>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-5">
 
             {[
               ['Trade', '#'],
@@ -172,7 +172,7 @@ export default function Home() {
 
          
           {/* CHART */}
-         <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6 min-h-[760px]">
+         <div className="border border-white/10 rounded-[35px] bg-[#090909] p-6 min-h-[760px] flex flex-col">
 
             <div className="flex justify-between items-center mb-6">
 
@@ -186,7 +186,7 @@ export default function Home() {
 
             </div>
 
-            <div className="h-[680px] rounded-[28px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(124,58,237,0.15)]">
+            <div className="h-[640px] rounded-[28px] overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(124,58,237,0.15)]">
 
               <iframe
                 src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark&style=1"
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           {/* SWAP */}
-          <div className="border border-cyan-500/10 rounded-[22px] bg-[#050816]/95 backdrop-blur-xl p-4 max-w-[420px] mx-auto shadow-[0_0_40px_rgba(34,211,238,0.08)] sticky top-[95px]">
+          <div className="border border-cyan-500/10 rounded-[22px] bg-[#050816]/95 backdrop-blur-xl p-4 max-w-[520px] mx-auto shadow-[0_0_40px_rgba(34,211,238,0.08)] sticky top-[95px]">
 
             <div className="flex justify-between items-center mb-8">
 
