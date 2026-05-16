@@ -426,59 +426,7 @@ export default function Home() {
 
         </section>
 
-        {/* TOKENOMICS */}
-        <section className="mt-24">
-
-          <div className="text-center mb-14">
-
-            <h2 className="text-5xl font-black mb-4">
-              Tokenomics
-            </h2>
-
-            <p className="text-gray-400">
-              USDX ecosystem token allocation.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-
-            {[
-              ['35%', 'Liquidity'],
-              ['25%', 'Staking'],
-              ['20%', 'Marketing'],
-              ['20%', 'Development']
-            ].map(([value, title]) => (
-
-              <div
-                key={title}
-                className="border border-white/10 rounded-[35px] bg-[#090909] p-8 text-center"
-              >
-
-                <div className="w-24 h-24 rounded-full border-4 border-orange-500 flex items-center justify-center mx-auto mb-6">
-
-                  <span className="text-3xl font-black text-orange-500">
-                    {value}
-                  </span>
-
-                </div>
-
-                <h3 className="text-2xl font-black mb-2">
-                  {title}
-                </h3>
-
-                <p className="text-gray-400">
-                  USDX Allocation
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </section>
-
+       
       </main>
 
     </div>
